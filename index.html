@@ -4,302 +4,419 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portfolio Website" />
+    <meta name="description" content="Shaima Alsharif - Application Developer & Data Engineer Portfolio" />
     <meta name="author" content="Shaima Alsharif" />
     <link rel="shortcut icon" href="./assets/img/favicon.ico" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <title>Shaima Alsharif</title>
+    <title>Shaima Alsharif | Developer Portfolio</title>
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
 
   <body>
-    <div id="particles-js">
-      <div class="header">
-        <h1>
-          <span class="site-title">SHAIMA ALSHARIF</span>
-          <span class="site-description">Application Developer • Data Engineer</span>
-        </h1>
-        <div class="header-icons">
-          <a aria-label="My LinkedIn Profile" target="_blank" href="https://www.linkedin.com/in/shaima-alsharif/">
-            <i class="fa fa-linkedin icon" aria-hidden="true"></i>
-          </a>
-          <a aria-label="My Github Profile" target="_blank" href="https://github.com/ShaimaManami">
-            <i class="fa fa-github-alt icon" aria-hidden="true"></i>
-          </a>
-          <a aria-label="Send Email" href="mailto:shaimaa.alshariif@gmail.com" target="_blank"
-            ><i class="fa fa-envelope icon"></i
-          ></a>
+    <!-- SVG Gradients Definition (hidden) -->
+    <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+      <defs>
+        <!-- Primary Gradient (Purple to Deep Purple) - RECOMMENDED -->
+        <linearGradient id="logo-gradient-primary" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Vibrant Gradient (Purple to Pink) - PLAYFUL -->
+        <linearGradient id="logo-gradient-vibrant" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#a855f7;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Cool Gradient (Blue to Cyan) -->
+        <linearGradient id="logo-gradient-cool" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Warm Gradient (Pink to Yellow) -->
+        <linearGradient id="logo-gradient-warm" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+        </linearGradient>
+
+        <!-- Animated Gradient - MOST PLAYFUL -->
+        <linearGradient id="logo-gradient-animated" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#667eea;stop-opacity:1">
+            <animate attributeName="stop-color" values="#667eea;#ec4899;#10b981;#667eea" dur="8s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1">
+            <animate attributeName="stop-color" values="#764ba2;#f5576c;#4facfe;#764ba2" dur="8s" repeatCount="indefinite" />
+          </stop>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo-link" aria-label="Shaima Alsharif Home">
+          <svg class="nav-logo" viewBox="0 0 529.16669 529.16669" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Shaima Alsharif Logo">
+            <g transform="translate(-4247.4521,32.014614)" fill="url(#logo-gradient-primary)">
+              <g transform="matrix(2.5716938,0,0,2.5716938,6003.3577,-2361.339)">
+                <path d="m -604.2299,960.5812 -8.6108,7.1887 c 0.087,6.0082 -0.5647,22.0738 -0.084,27.7404 0.6046,7.1343 5.7271,13.9222 12.0587,13.3279 l 6.2704,-0.5886 c 0.4165,8.8827 6.9543,17.1276 13.6623,17.1276 6.7079,0 9.0311,-3.6177 11.3393,-9.4185 2.308,-5.8008 2.9113,-9.3316 1.0764,-12.8664 -1.8348,-3.5349 -8.8061,-6.9774 -22.1697,-5.7232 0,0 -0.50468,-0.88762 -0.24094,-1.40775 0.71522,-1.41052 3.80347,-6.57693 10.99844,-7.37135 2.16226,-0.23874 5.2294,7.2484 28.0541,5.1061 l 7.1789,-0.6738 -4.5439,6.5158 18.7219,-6.1613 4.642,-12.3492 c 0,0 -15.847,1.4279 -30.7314,2.8841 -14.5231,1.3631 -19.7218,-5.6157 -22.5232,-5.6157 -2.8014,0 -7.3462,2.3866 -11.2732,10.1741 -1.1974,2.3969 -2.2567,5.135 -3.1481,9.172 l -5.772,0.5417 c -2.0347,0.191 -5.0936,-2.7121 -5.2124,-7.3051 -0.178,-6.8921 0.3072,-30.2975 0.3072,-30.2975 z m 33.9757,54.2675 c -6.7423,0.5584 -12.8562,-0.9694 -17.1731,-7.2719 7.3984,-0.6946 12.6786,2.2753 17.1731,7.2719 z" />
+                <path d="m -550.25483,965.29265 8.7253,5.1187 -4.1943,7.5498 -8.727,-5.1169 z" />
+                <path d="m -561.82453,965.29265 8.7253,5.1187 -4.1943,7.5498 -8.727,-5.1169 z" />
+                <path d="m -538.68513,965.29265 8.7253,5.1187 -4.1943,7.5498 -8.727,-5.1169 z" />
+                <path d="m -560.2341,994.7494 8.7253,5.1187 -4.1943,7.5498 -8.727,-5.1169 z" />
+                <path d="m -560.2341,1004.7598 8.7253,5.1187 -4.1943,7.5498 -8.727,-5.1169 z" />
+                <path d="m -632.9111,981.2283 c -7.5428,0.065 -10.5684,7.5502 -12.0132,11.6261 -1.3115,3.6999 -2.3659,7.052 -1.9461,9.9369 l -3.6158,0.3395 -12.8757,11.5724 44.4835,-4.1749 4.0386,-10.743 -3.1508,0.2734 c -11.2611,0.6913 -18.7599,0.7279 -26.1048,-6.8296 6.4786,-1.6689 12.9411,-0.4684 18.9265,4.5191 l 4.1046,-2.4396 c -0.2607,-10.1727 -6.2463,-14.129 -11.8468,-14.0803 z" />
+                <path d="m -505.7178,992.8988 c 0,0 0.4424,34.6684 0.6111,43.0977 l 8.6708,7.0964 c -0.1267,-6.5183 -0.6277,-39.407 -0.6058,-43.0822 z" />
+                <path d="m -610.0189,1012.7804 c -8.0704,-0.035 -11.1231,8.579 -12.6968,13.0743 -5.0893,14.5384 4.3139,17.5099 20.0357,15.9733 -0.2355,1.0647 -0.77,2.2037 -3.3618,2.5677 l -16.7639,1.625 c -13.582,1.2303 -16.1888,-1.1094 -19.3538,-6.6115 h -0.9581 c -1.9792,5.5034 -3.1271,10.9017 0.7798,14.2746 3.2611,2.8154 8.0784,3.5641 17.5674,2.6293 l 3.1236,-0.298 c 6.7157,-0.6985 12.3146,-1.4703 13.8593,-2.2052 4.3286,-2.0594 7.2417,-8.9959 7.7019,-12.2355 l 24.2042,-2.3662 4.0054,-10.6562 -26.4237,2.4799 c 0.446,-8.7999 -2.9013,-18.2919 -11.7192,-18.2515 z m 9.2384,18.4895 c -9.9942,1.0099 -17.3311,-0.8275 -20.5899,-6.4926 10.4959,-1.7072 15.9993,0.7123 20.5899,6.4926 z" />
+                <path d="m -519.8935,986.1578 c 0,0 0.4263,25.6997 0.3075,30.2927 -0.1498,5.7899 -2.4589,7.3059 -5.6271,7.6156 l -27.2774,2.6665 c 0,0 -1.6149,9.1312 -1.8815,10.3792 -0.2666,1.248 -0.7736,2.6344 -3.4287,2.894 -2.6903,0.2629 -30.1563,2.9476 -30.1563,2.9476 l -13.008,11.0453 c 0,0 24.3233,-2.3776 35.9234,-3.5114 4.7398,-0.4633 5.9794,-0.9025 7.6745,-2.481 3.1123,-2.8982 5.1931,-8.4914 5.5711,-11.152 l 28.2397,-2.7606 c 6.5731,-0.6426 11.7533,-5.873 12.3579,-13.0073 0.4804,-5.6666 -0.1708,-21.7317 -0.084,-27.7399 z" />
+                <path d="m -533.0385,1009.0505 8.7253,5.1187 -4.1943,7.5498 -8.727,-5.1169 z" />
+                <path d="m -544.6082,1009.0505 8.7253,5.1187 -4.1943,7.5498 -8.727,-5.1169 z" />
+                <path d="m -541.1064,998.443 8.7253,5.1187 -4.1943,7.5498 -8.727,-5.1169 z" />
+                <path d="m -565.5261,1016.4473 8.7253,5.1187 -4.1943,7.5498 -8.727,-5.1169 z" />
+                <path d="m -565.5261,1026.4577 8.7253,5.1187 -4.1943,7.5498 -8.727,-5.1169 z" />
+                <path d="m -634.0811,1016.8612 8.7253,5.1187 -4.1943,7.5498 -8.727,-5.1169 z" />
+              </g>
+            </g>
+          </svg>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="mailto:shaimaa.alshariif@gmail.com" class="nav-link nav-cta">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div id="particles-js"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-greeting">Hi there! I'm</span>
+          <h1 class="hero-name">Shaima Alsharif</h1>
+          <p class="hero-title">
+            <span class="typing-text">python -c "from full_stack_developer import *</span>
+            <span class="title-separator">;</span>
+            <span class="typing-text delay-1">init()"</span>
+          </p>
+          <p class="hero-description">
+            Turning ideas into scalable products and complex data into meaningful insights.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#about" class="btn btn-secondary">Learn More</a>
+          </div>
         </div>
-        <div class="header-links">
-          <a class="link" href="#about" data-scroll>About Me</a>
-          <a class="link" href="#experience" data-scroll>Work Experience</a>
-          <a class="link" href="#projects" data-scroll>Projects</a>
+        <div class="hero-social">
+          <a href="https://www.linkedin.com/in/shaima-alsharif/" target="_blank" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/ShaimaManami" target="_blank" class="social-link" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:shaimaa.alshariif@gmail.com" class="social-link" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
       </div>
-      <a class="down" href="#about" data-scroll><i class="fa fa-chevron-down icon" aria-hidden="true"></i></a>
-    </div>
+      <div class="scroll-indicator">
+        <span class="scroll-text">Scroll to explore</span>
+        <i class="fas fa-chevron-down scroll-arrow"></i>
+      </div>
+    </section>
 
     <!-- About Section -->
-    <section id="about">
-      <div class="user-details">
-        <h1>About Me</h1>
-        <p>
-          Umm Al-Qura University graduate with a Bachelor's degree in Computer Science, and a junior Applications Developer.
-          Held various responsibilities relating to Data processing, Backend, and Frontend web development. 
-          Built additional APIs to support the mobile application. 
-        </p>
-      </div>
-    </section>
-    <!-- Experience Section -->
-    <section id="experience">
-      <div class="user-details">
-        <h1>Work Experience</h1>
-      </div>
-      <!-- Experience Timeline -->
-      <div class="timeline">
-        <!-- Experience #1 -->
-        <div class="timeline-item">
-          <div class="timeline-icon">
-            <span>&#128205;</span> <!-- Pin icon -->
-          </div>
-          <div class="timeline-content">
-            <h3>Applications Developer</h3>
-            <p>
-              Designed and implemented scalable web application solutions, including APIs with Django, Flask,
-               and FastAPI, a geospatial data processing pipeline using Airflow, and metadata serving systems with PyGeoAPI or
-                CouchDB, ensuring seamless integration, efficient data management, and high performance for mobile and web platforms.
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get to know me</span>
+          <h2 class="section-title">About Me</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p class="about-intro">
+              I'm a <strong>Computer Science graduate</strong> from Umm Al-Qura University, 
+              passionate about creating impactful digital products.
             </p>
+            <p>
+              As a junior Applications Developer, I specialize in building web applications 
+              and data processing pipelines. My expertise spans across backend development with 
+              Django, Flask, and FastAPI, frontend technologies like Vue.js, and data engineering 
+              with tools like Airflow.
+            </p>
+            <p>
+              I love solving complex problems and continuously learning new technologies 
+              to deliver high-quality, scalable solutions.
+            </p>
+            <div class="tech-stack">
+              <h3>Technologies I work with:</h3>
+              <div class="tech-grid">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Django</span>
+                <span class="tech-badge">FastAPI</span>
+                <span class="tech-badge">Vue.js</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Apache Airflow</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">Docker</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-visual">
+            <div class="profile-card">
+              <div class="profile-decoration"></div>
+              <div class="profile-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="profile-stats">
+                <div class="stat-item">
+                  <span class="stat-number">10+</span>
+                  <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">∞</span>
+                  <span class="stat-label">Lines of Code</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    
+
+    <!-- Experience Section -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">My Journey</span>
+          <h2 class="section-title">Work Experience</h2>
+        </div>
+        <div class="experience-timeline">
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-marker">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-badge">2023 - Present</span>
+              <h3 class="timeline-title">Full-Stack Developer</h3>
+              <h4 class="timeline-company">National Center of Meteorology</h4>
+              <ul class="timeline-responsibilities">
+                <li>Developed a data processing pipeline for geospatial image processing, metadata extraction, and data monitoring and archiving.</li>
+                <li>Built a metadata management system to improve dataset organization, standardization, discoverability, also serve as API to multiple applications.</li>
+                <li>Created frontend intractive user interfaces, including an interactive geospatial dashboard and multiple data-table views.</li>
+                <li>Designed scalable RESTful APIs for spatial search, real-time data access, and automated analytical report generation.</li>
+              </ul>
+              <div class="timeline-skills">
+                <span>Apache Airflow</span>
+                <span>Django</span>
+                <span>FastAPI</span>
+                <span>Vue.js</span>
+                <span>PyGeoAPI</span>
+                <span>CouchDB</span>
+                <span>Docker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Projects Section -->
-    <section id="projects">
-      <div class="user-details">
-        <h1>Featured Projects</h1>
-      </div>
-      <!-- Use Project #1: Meteo Portal-->
-      <div class="user-projects">
-        <div class="images-right">
-          <picture>
-            <img alt="Meteo Portal" src="./assets/img/png/Dashboard.png" />
-          </picture>
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">What I've Built</span>
+          <h2 class="section-title">Featured Projects</h2>
         </div>
-        <div class="contents" style="text-align: center">
-          <h3>Meteo Portal</h3>
-          <div>
-          <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/django.svg"
-            style="filter: invert(22%) sepia(16%) saturate(600%) hue-rotate(90deg) brightness(95%) contrast(90%)"
-          />
-          &nbsp;
+        <div class="projects-grid">
+          <!-- Project 1: Meteo Portal -->
+          <article class="project-card" data-aos="fade-up">
+            <div class="project-image">
+              <img src="./assets/img/png/Dashboard.png" alt="Meteo Portal Dashboard" />
+              <div class="project-overlay">
+                <a href="https://meteo.ncm.gov.sa/en/start/start-here/" target="_blank" class="project-link-overlay">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Meteo Portal</h3>
+              <p class="project-description">
+                A comprehensive web portal for meteorological data visualization and analysis, 
+                featuring an intuitive dashboard with interactive charts and maps for real-time 
+                weather parameter exploration.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">
+                  <i class="fab fa-python"></i> Django
+                </span>
+                <span class="tech-tag">
+                  <i class="fab fa-vuejs"></i> Vue.js
+                </span>
+                <span class="tech-tag">
+                  <i class="fab fa-bootstrap"></i> Bootstrap
+                </span>
+              </div>
+              <a href="https://meteo.ncm.gov.sa/en/start/start-here/" target="_blank" class="project-link">
+                View Project <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
 
-          <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/vue-dot-js.svg"
-            style="filter: invert(55%) sepia(37%) saturate(900%) hue-rotate(90deg) brightness(105%) contrast(95%)"
-          />
-          &nbsp;
+          <!-- Project 2: Bug Tracker -->
+          <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+              <img src="./assets/img/png/BugTracker.png" alt="Bug Tracker Application" />
+              <div class="project-overlay">
+                <a href="https://youtu.be/pxAF4e_zcto" target="_blank" class="project-link-overlay">
+                  <i class="fas fa-play"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Bug Tracker</h3>
+              <p class="project-description">
+                A comprehensive bug tracking system for developers to document, manage, and monitor 
+                software bugs throughout the development lifecycle, with prioritization and team 
+                collaboration features.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <a href="https://youtu.be/pxAF4e_zcto" target="_blank" class="project-link">
+                Watch Demo <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
 
-          <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/bootstrap.svg"
-            style="filter: invert(40%) sepia(80%) saturate(900%) hue-rotate(230deg) brightness(105%) contrast(90%)"
-          />
+          <!-- Project 3: UQU Map -->
+          <article class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image">
+              <img src="./assets/img/png/UQU_CAPSTONE_APP.png" alt="UQU Map Application" />
+              <div class="project-overlay">
+                <a href="https://youtu.be/NXYu3jrSTbk" target="_blank" class="project-link-overlay">
+                  <i class="fas fa-play"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">UQU Map</h3>
+              <p class="project-description">
+                A cross-platform mobile application for viewing and reserving university classrooms, 
+                featuring an intuitive map interface to check classroom availability in real-time.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">
+                  <i class="fab fa-flutter"></i> Flutter
+                </span>
+                <span class="tech-tag">Dart</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <a href="https://youtu.be/NXYu3jrSTbk" target="_blank" class="project-link">
+                Watch Demo <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
 
-          
-          </div>
-          <p style="text-align: justify">
-            A comprehensive web portal designed for meteorological data visualization and analysis. The portal features an
-             intuitive dashboard that allows users to explore various weather parameters through interactive charts and maps. 
-             Built using Django for the backend and Vue.js for the frontend, the application ensures a seamless user experience 
-             with real-time data updates and responsive design.
-          </p>
-          <a class="project-link" target="_blank" href="https://meteo.ncm.gov.sa/en/start/start-here/">Check it out!</a>
-        </div>
-      </div>
-      <!-- Use Project #2: Bug Tracker website -->
-      <div class="user-projects">
-        <div class="images-left">
-          <picture>
-            <img alt="Bug Tracker website" src="./assets/img/png/BugTracker.png" />
-          </picture>
-        </div>
-        <div class="contents-right" style="text-align: center">
-          <h3>Bug Tracker</h3>
-          <div>
-            <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/csharp.svg"
-            style="filter: invert(24%) sepia(88%) saturate(755%) hue-rotate(250deg) brightness(97%) contrast(96%);"
-            alt="C# Logo"
-          />
-          &nbsp;
-          <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/css3.svg"
-            style="filter: invert(35%) sepia(80%) saturate(1077%) hue-rotate(188deg) brightness(92%) contrast(91%);"
-            alt="CSS3 Logo"
-          />
-          &nbsp;
-          <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/javascript.svg"
-            style="filter: invert(90%) sepia(33%) saturate(3770%) hue-rotate(2deg) brightness(103%) contrast(96%);"
-            alt="JavaScript Logo"
-          />
-          </div>
-          <p style="text-align: justify">
-            This is a comprehensive bug tracking web application tailored for developers to effectively document, manage, and monitor software bugs throughout the development lifecycle. The application allows users to log detailed descriptions of bugs, prioritize them, and track their resolution process step by step, fostering better collaboration and productivity among team members.
-            Built with a focus on usability and efficiency, this application ensures that developers can maintain a clear overview of the debugging process, helping to streamline workflows and improve project quality.
-          </p>
-          <a class="project-link" target="_blank" href="https://youtu.be/pxAF4e_zcto">
-            Check it out!
-          </a>
-        </div>
-      </div>
-      <!-- User Project #3: UQU Map application -->
-      <div class="user-projects">
-        <div class="images-right">
-          <picture>
-            <img alt="UQU Map application" src="./assets/img/png/UQU_CAPSTONE_APP.png" />
-          </picture>
-        </div>
-        <div class="contents" style="text-align: center">
-          <h3>UQU Map</h3>
-          <div>
-            <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/dart.svg"
-            style="filter: invert(73%) sepia(74%) saturate(1552%) hue-rotate(169deg) brightness(109%) contrast(97%)"
-          />
-          &nbsp;
-          <img
-          height="32"
-          width="32"
-          src="https://unpkg.com/simple-icons@3.4.0/icons/firebase.svg"
-          style="filter: invert(47%) sepia(87%) saturate(1484%) hue-rotate(346deg) brightness(103%) contrast(101%)"
-        />
-        
-          &nbsp;
-          <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/flutter.svg"
-            style="filter: invert(50%) sepia(80%) saturate(500%) hue-rotate(180deg) brightness(105%) contrast(95%)"
-          />
-          
-          </div>
-          <p style="text-align: justify">
-            A cross-platform mobile application designed to help users view and reserve classrooms effortlessly. The app includes an intuitive map feature to simplify checking the availability of other classrooms.
+          <!-- Project 4: Pumping Iron -->
+          <article class="project-card" data-aos="fade-up">
+            <div class="project-image">
+              <img src="./assets/img/png/PumpingIron.png" alt="Pumping Iron Website" />
+              <div class="project-overlay">
+                <a href="https://www.youtube.com/watch?v=6v66NVoG1IU" target="_blank" class="project-link-overlay">
+                  <i class="fas fa-play"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Pumping Iron</h3>
+              <p class="project-description">
+                A fitness blog web application designed to equip users with comprehensive knowledge 
+                to kickstart their fitness journey with expert guidance and resources.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">
+                  <i class="fab fa-php"></i> PHP
+                </span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <a href="https://www.youtube.com/watch?v=6v66NVoG1IU" target="_blank" class="project-link">
+                Watch Demo <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
 
-            This an Android application was developed using Dart with the Flutter framework and integrates Firestore, a NoSQL database, for efficient data management.
-          </p>
-          <a class="project-link" target="_blank" href="https://youtu.be/NXYu3jrSTbk">Check it out!</a>
-        </div>
-      </div>
-
-      <!-- User Project #4: Pumping Iron website -->
-      <div class="user-projects">
-        <div class="images-left">
-          <picture>
-            <img alt="Pumping Iron website" src="./assets/img/png/PumpingIron.png" />
-          </picture>
-        </div>
-        <div class="contents-right" style="text-align: center">
-          <h3>Pumping Iron</h3>
-          <img
-          height="32"
-          width="32"
-          src="https://unpkg.com/simple-icons@3.4.0/icons/php.svg"
-          style="filter: invert(50%) sepia(89%) saturate(719%) hue-rotate(172deg) brightness(93%) contrast(89%);"
-          alt="PHP Logo"
-        />
-        &nbsp;
-        <img
-          height="32"
-          width="32"
-          src="https://unpkg.com/simple-icons@3.4.0/icons/css3.svg"
-          style="filter: invert(35%) sepia(80%) saturate(1077%) hue-rotate(188deg) brightness(92%) contrast(91%);"
-          alt="CSS3 Logo"
-        />
-        &nbsp;
-        <img
-          height="32"
-          width="32"
-          src="https://unpkg.com/simple-icons@3.4.0/icons/javascript.svg"
-          style="filter: invert(90%) sepia(33%) saturate(3770%) hue-rotate(2deg) brightness(103%) contrast(96%);"
-          alt="JavaScript Logo"
-        />
-        &nbsp;
-          <p style="text-align: justify">
-            This is a fitness blog web application, used to equip users with the knowledge necessary to start their fitness journey.
-            This web application was developed using basic HTML5/CSS3 and Vanilla Javascript, later on we added PHP, and you view code on Github here!
-          </p>
-          <a class="project-link" target="_blank" href="https://www.youtube.com/watch?v=6v66NVoG1IU"
-            >Check it out!</a
-          >
+          <!-- Project 5: Children Books -->
+          <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+              <img src="./assets/img/png/ChildrenBooks.png" alt="Children Books Website" />
+              <div class="project-overlay">
+                <a href="https://youtu.be/wxCH2yV7sos" target="_blank" class="project-link-overlay">
+                  <i class="fas fa-play"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Children Books Store</h3>
+              <p class="project-description">
+                A bookstore web application enabling users to register, browse, and purchase books, 
+                complete with a feedback system for customer suggestions and support.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">
+                  <i class="fab fa-php"></i> PHP
+                </span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <a href="https://youtu.be/wxCH2yV7sos" target="_blank" class="project-link">
+                Watch Demo <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
         </div>
       </div>
-
-      <!-- User Project #5: Children Books Website -->
-      <div class="user-projects">
-        <div class="images-right">
-          <picture>
-            <img alt="Children Books" src="./assets/img/png/ChildrenBooks.png" />
-          </picture>
-        </div>
-        <div class="contents" style="text-align: center">
-          <h3>Children Books</h3>
-          <div>
-            <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/php.svg"
-            style="filter: invert(50%) sepia(89%) saturate(719%) hue-rotate(172deg) brightness(93%) contrast(89%);"
-            alt="PHP Logo"
-          />
-          &nbsp;
-          <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/css3.svg"
-            style="filter: invert(35%) sepia(80%) saturate(1077%) hue-rotate(188deg) brightness(92%) contrast(91%);"
-            alt="CSS3 Logo"
-          />
-          &nbsp;
-          <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/javascript.svg"
-            style="filter: invert(90%) sepia(33%) saturate(3770%) hue-rotate(2deg) brightness(103%) contrast(96%);"
-            alt="JavaScript Logo"
-          />
-          &nbsp;
-          </div>
-          <p style="text-align: justify">
-            This is a bookstore web application that allows users to register, browse, and shop for books. It also features a feedback system, enabling users to submit complaints or suggestions directly to the team for resolution and improvement.
-            The application was built using HTML5, CSS3, Vanilla JavaScript, and PHP.
-          </p>
-          <a class="project-link" target="_blank" href="https://youtu.be/wxCH2yV7sos">
-            Check it out!
-          </a>
-        </div>
-      </div>
-
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-text">
+            <h3>Let's Build Something Amazing Together</h3>
+            <p>Always open to discussing new projects, creative ideas, or opportunities.</p>
+          </div>
+          <div class="footer-links">
+            <a href="https://www.linkedin.com/in/shaima-alsharif/" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/ShaimaManami" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:shaimaa.alshariif@gmail.com" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="./old_index.html"
+              class="footer-archive"
+              aria-label="View previous portfolio"
+              title="View previous portfolio">
+              <i class="fas fa-box-archive"></i>
+              <span class="footer-link-text">Old Portfolio</span>
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Shaima Alsharif. Crafted with <span class="heart">❤</span></p>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="./assets/js/sweet-scroll.min.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
