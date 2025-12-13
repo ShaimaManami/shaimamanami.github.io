@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
     text.style.opacity = '1';
     
     let charIndex = 0;
-    const delay = index * 4300;
+    const delay = index * 3000;
     
     setTimeout(() => {
       const typingInterval = setInterval(() => {
