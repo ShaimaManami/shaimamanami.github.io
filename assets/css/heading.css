@@ -1,1 +1,59 @@
-@layer components{.heading{line-height:var(--lineHeightTitle);color:var(--textTitle)}.heading[data-level="0"]{letter-spacing:-.05em;font-size:var(--fontSizeH0)}.heading[data-level="1"]{letter-spacing:-.05em;font-size:var(--fontSizeH1)}.heading[data-level="2"]{font-size:var(--fontSizeH2);letter-spacing:-.04em}.heading[data-level="3"]{font-size:var(--fontSizeH3);letter-spacing:-.02em}.heading[data-level="4"]{font-size:var(--fontSizeH4);letter-spacing:-.01em}.heading[data-level="5"]{font-size:var(--fontSizeH5)}.heading[data-align=auto]{text-align:inherit}.heading[data-align=start]{text-align:start}.heading[data-align=center]{text-align:center}.heading[data-weight=regular]{font-weight:var(--fontWeightRegular)}.heading[data-weight=medium]{font-weight:var(--fontWeightMedium)}.heading[data-weight=bold]{font-weight:var(--fontWeightBold)}}
+@layer components {
+    .heading {
+        line-height: var(--lineHeightTitle);
+        color: var(--textTitle)
+    }
+
+    .heading[data-level="0"] {
+        letter-spacing: -.05em;
+        font-size: var(--fontSizeH0)
+    }
+
+    .heading[data-level="1"] {
+        letter-spacing: -.05em;
+        font-size: var(--fontSizeH1)
+    }
+
+    .heading[data-level="2"] {
+        font-size: var(--fontSizeH2);
+        letter-spacing: -.04em
+    }
+
+    .heading[data-level="3"] {
+        font-size: var(--fontSizeH3);
+        letter-spacing: -.02em
+    }
+
+    .heading[data-level="4"] {
+        font-size: var(--fontSizeH4);
+        letter-spacing: -.01em
+    }
+
+    .heading[data-level="5"] {
+        font-size: var(--fontSizeH5)
+    }
+
+    .heading[data-align=auto] {
+        text-align: inherit
+    }
+
+    .heading[data-align=start] {
+        text-align: start
+    }
+
+    .heading[data-align=center] {
+        text-align: center
+    }
+
+    .heading[data-weight=regular] {
+        font-weight: var(--fontWeightRegular)
+    }
+
+    .heading[data-weight=medium] {
+        font-weight: var(--fontWeightMedium)
+    }
+
+    .heading[data-weight=bold] {
+        font-weight: var(--fontWeightBold)
+    }
+}

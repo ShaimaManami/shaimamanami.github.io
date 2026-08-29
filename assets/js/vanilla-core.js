@@ -1,9 +1,5 @@
 /**
- * vanilla-core.js — replaces all React/Remix-driven interactivity that is
- * shared across every page: theme toggle, mobile menu, scroll-reveal,
- * decoder-text letter-scramble, blur-up image loading, and the resume/uses
- * parallax background. Loaded on all 5 pages as a type="module" script so
- * it can share spring.js with hero-sphere.js / model-viewer.js.
+ * vanilla-core.js 
  */
 import { createSpring } from "./spring.js";
 import { renderNavbar } from "./navbar.js";
@@ -12,13 +8,6 @@ if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
 var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Applied synchronously here (not inside DOMContentLoaded) so the saved
-// theme is on <body> before any other module-script effect — e.g.
-// hero-sphere.js — reads it. That script runs immediately at module
-// evaluation time (readyState is already past "loading" for a deferred
-// module), which is before a DOMContentLoaded-wrapped theme init would
-// otherwise have run, causing a one-load-in-a-while flash of the wrong
-// theme in effects that read data-theme at startup.
 (function applySavedTheme() {
   var saved = localStorage.getItem("theme-override");
   if (saved === "light" || saved === "dark") {

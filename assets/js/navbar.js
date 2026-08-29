@@ -1,9 +1,5 @@
 /**
- * navbar.js — single source of truth for the site navbar, injected into
- * <header class="navbar" id="navbar-root"></header> on every page. Replaces
- * the previous copy-pasted <header> markup, which had drifted out of sync
- * across pages (missing "Articles" link on some pages, mismatched job
- * title/logo mark, inconsistent icon order).
+ * navbar.js 
  */
 import { monogramSVG } from "./monogram.js";
 

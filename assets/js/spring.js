@@ -1,12 +1,5 @@
 /**
- * spring.js — shared damped-harmonic-oscillator integrator.
- * Reusable by any effect that needs Framer-Motion-style spring physics
- * without pulling in Framer Motion: decoder-text, the hero displacement
- * sphere's mouse-look, and the 3D model viewer's mouse-look/reveal tweens.
- *
- * Physics: a = (-stiffness*(x-target) - damping*v) / mass, integrated with
- * semi-implicit Euler each animation frame, stopping once the value is
- * within restDelta of target and velocity is under restSpeed.
+ * spring.js 
  */
 export function createSpring(initial, options) {
   options = options || {};

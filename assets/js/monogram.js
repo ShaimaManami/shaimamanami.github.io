@@ -1,9 +1,5 @@
 /**
- * monogram.js — the hand-drawn "الشريف" (Alsharif) monogram mark, shared
- * between navbar.js and any other spot that wants the brand mark (e.g. the
- * homepage About section's x-ray reveal card). `clipId` must be unique per
- * page since SVG ids are global — pass a different one for each instance
- * rendered on the same page.
+ * monogram.js
  */
 export function monogramSVG(size, clipId) {
   size = size || 100;

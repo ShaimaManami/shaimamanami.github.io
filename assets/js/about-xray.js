@@ -1,18 +1,6 @@
 /**
- * about-xray.js — homepage-only "About me" visual. Replaces the previous
- * portrait photo with a mouse-fluid reveal box: a solid branded card sits
- * on top of a small flowing-line WebGL scene (the same technique as
- * hero-sphere.js), and moving the pointer over it erodes a soft, slowly-
- * healing hole in the card, revealing the scene underneath.
- *
  * Inspired by the mouse-trail → diffuse → reveal pipeline in
  * https://tympanus.net/codrops/2026/03/23/building-a-dual-scene-fluid-x-ray-reveal-effect-in-three-js/
- * — that demo uses WebGPU + TSL (ping-pong render targets, GPU fluid sim),
- * neither of which this project's classic-WebGL three.js bundle or no-
- * build-step setup can use. This reimplements the same *feel* (a trail
- * that erodes a surface and slowly closes back up) with plain Canvas2D
- * alpha compositing driving the "hole" instead of a GPU fluid simulation —
- * same idea, much cheaper, no new dependencies.
  */
 import {
   W as WebGLRenderer,
@@ -101,7 +89,7 @@ function init() {
   var markWrap = document.createElement("div");
   markWrap.className = "profile__xray-mark";
   markWrap.setAttribute("aria-hidden", "true");
-  markWrap.innerHTML = monogramSVG(96, "about-monogram-clip");
+  markWrap.innerHTML = monogramSVG(150, "about-monogram-clip");
   container.appendChild(markWrap);
 
   var hint = document.createElement("span");

@@ -1,18 +1,6 @@
 /**
- * hero-sphere.js — the WebGL background behind the hero heading on the
- * homepage. A fullscreen fragment shader of glowing flowing lines, drifting
- * noise, a twinkling starfield, and a soft mouse-follow glow — ported from
- * https://codepen.io/VoXelo/full/raxRoxg (own adaptation: recolored from
- * warm/rainbow tones into the site's cyan/violet accent palette, and
- * mounted through the same MeshBasicMaterial.onBeforeCompile shader-
- * override trick the earlier hero effects used, since this project's
- * trimmed three.js bundle doesn't export ShaderMaterial or
- * OrthographicCamera — the shader itself only needs `vUv` and a resolution
- * uniform, so a plain PerspectiveCamera + large plane works identically).
- *
- * Earlier versions (Perlin displacement sphere, then raymarched metaball
- * droplets) are kept, unused, at hero-sphere-original.js and
- * hero-sphere-metaballs.js.
+ * hero-sphere.js — 
+ * https://codepen.io/VoXelo/full/raxRoxg 
  */
 import {
   W as WebGLRenderer,

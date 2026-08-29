@@ -1,1 +1,76 @@
-@layer components{.footer{--lineHeightBody: 1.1;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;width:100vw;padding:var(--space3XL) var(--spaceL);z-index:var(--zIndex2);position:relative;color:var(--textLight);padding-left:calc(var(--spaceXL) + var(--spaceOuter))}@media (max-width: 696px),(max-height: 696px){.footer{padding-left:var(--spaceL)}}.footer__link{display:inline-flex}.footer__date{padding-right:var(--spaceXS);display:inline-flex}}@layer components{.section{padding-right:var(--space5XL);padding-left:calc(var(--space4XL) * 2)}.section:focus{outline:none}@media (min-width: 2080px){.section{padding-left:var(--space5XL)}}@media (max-width: 1040px){.section{padding-left:calc(var(--space4XL) + var(--space3XL))}}@media (max-width: 696px){.section{padding-right:var(--spaceL);padding-left:var(--spaceL)}}@media (max-width: 696px),(max-height: 696px){.section{padding-left:var(--spaceOuter);padding-right:var(--spaceOuter)}}@media (max-width: 820px) and (max-height: 420px){.section{padding-left:var(--space4XL);padding-right:var(--space4XL)}}}
+@layer components {
+    .footer {
+        --lineHeightBody: 1.1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: center;
+        width: 100vw;
+        padding: var(--space3XL) var(--spaceL);
+        z-index: var(--zIndex2);
+        position: relative;
+        color: var(--textLight);
+        padding-left: calc(var(--spaceXL) + var(--spaceOuter))
+    }
+
+    @media (max-width: 696px),
+    (max-height: 696px) {
+        .footer {
+            padding-left: var(--spaceL)
+        }
+    }
+
+    .footer__link {
+        display: inline-flex
+    }
+
+    .footer__date {
+        padding-right: var(--spaceXS);
+        display: inline-flex
+    }
+}
+
+@layer components {
+    .section {
+        padding-right: var(--space5XL);
+        padding-left: calc(var(--space4XL) * 2)
+    }
+
+    .section:focus {
+        outline: none
+    }
+
+    @media (min-width: 2080px) {
+        .section {
+            padding-left: var(--space5XL)
+        }
+    }
+
+    @media (max-width: 1040px) {
+        .section {
+            padding-left: calc(var(--space4XL) + var(--space3XL))
+        }
+    }
+
+    @media (max-width: 696px) {
+        .section {
+            padding-right: var(--spaceL);
+            padding-left: var(--spaceL)
+        }
+    }
+
+    @media (max-width: 696px),
+    (max-height: 696px) {
+        .section {
+            padding-left: var(--spaceOuter);
+            padding-right: var(--spaceOuter)
+        }
+    }
+
+    @media (max-width: 820px) and (max-height: 420px) {
+        .section {
+            padding-left: var(--space4XL);
+            padding-right: var(--space4XL)
+        }
+    }
+}

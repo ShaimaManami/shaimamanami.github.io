@@ -1,25 +1,6 @@
 /**
  * model-viewer.js — the 3D MacBook/iPhone device mockups in the homepage
- * project sections. Reproduces the original's GLTFLoader+DRACOLoader
- * pipeline, dual-mesh screen-texture crossfade, mouse-look spring
- * rotation, and reveal animations (see plan Phase 4).
- *
- * Export letters confirmed by grepping the original bundle's own import:
- * `import{W as xe,h as oe,e as ye,S as De,G as J,A as we,D as $,i as q,
- * P as Ue,j as K,M as O,O as Me,k as Se,d as Q,r as Re,c as be,a as Te,
- * t as ee,m as Ce,C as te,l as B,n as Pe}from"./three.js"` —
- * cross-referenced against hero-sphere.js's independently-confirmed
- * mapping (W/e/S/A/D/M all match), giving high confidence in the rest.
- * `t` (TextureLoader) and `m` (GLTFLoader, pre-wired with DRACOLoader at
- * "/assets/draco/") are exported as ready-to-use singleton instances, not
- * classes — used directly, no `new`.
- *
- * Known simplification: the original renders a real-time depth pass +
- * two-pass GPU Gaussian blur to build the soft contact shadow under each
- * device. That blur shader's exact GLSL wasn't recoverable from the
- * minified bundle. This reproduces the same visual result (a soft dark
- * blob under the device) with a canvas-radial-gradient texture instead —
- * indistinguishable at this size, far less code/risk.
+ * project sections. 
  */
 import {
   W as WebGLRenderer,

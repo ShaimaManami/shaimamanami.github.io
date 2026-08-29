@@ -1,19 +1,8 @@
-/**
- * contact-form.js — reproduces the original contact form's submit handler
- * exactly: client-side validation, then a direct call to the EmailJS
- * browser SDK (never a Remix/server action — confirmed by reading the
- * original route bundle, which bypassed the app's own server entirely).
- * The honeypot "Name" field is present in the markup but intentionally
- * never read here either, matching the original (confirmed dead there).
- *
- * Requires the EmailJS SDK global (`emailjs`) to already be loaded via
- * the CDN <script> tag added to contact/index.html before this file.
- */
 (function () {
   "use strict";
 
   var EMAILJS_SERVICE_ID = "service_ujx5chp";
-  var EMAILJS_TEMPLATE_ID = "template_oylv20a"; // template_oylv20a
+  var EMAILJS_TEMPLATE_ID = "template_oylv20a";
   var EMAILJS_PUBLIC_KEY = "oSvTdk-_IRtfOWm1N";
   var TO_EMAIL = "shaimaa.alshariif@gmail.com";
 

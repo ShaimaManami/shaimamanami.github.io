@@ -1,23 +1,7 @@
 /**
- * hero-sphere-metaballs.js — BACKUP, not loaded by any page. Kept as a
- * rollback copy of the raymarched-metaball hero effect that hero-sphere.js
- * replaced with a flowing-glow-line shader. Restore by copying this back
- * over hero-sphere.js.
- *
- * hero-sphere.js — the WebGL background behind the hero heading on the
- * homepage. Raymarched metaball droplets (SDF spheres blended with a
- * smooth-min union, ray marched in a fragment shader) that stretch into
- * an elastic trail following the mouse, inspired by:
+ * hero-sphere-metaballs.js — 
  * https://tympanus.net/codrops/2025/06/09/how-to-create-interactive-droplet-like-metaballs-with-three-js-and-glsl/
  * (own implementation, not a copy of that tutorial's code — adapted to
- * this project's trimmed three.js re-export bundle, which doesn't export
- * RawShaderMaterial/ShaderMaterial, so it uses the same
- * MeshBasicMaterial.onBeforeCompile full-shader-override trick already
- * used by hero-sphere-original.js instead of a dedicated shader material).
- *
- * Earlier attempts (Perlin displacement sphere, pixel-tile globe, 2D
- * flow-field) are not kept, except the very first one at
- * hero-sphere-original.js.
  */
 import {
   W as WebGLRenderer,

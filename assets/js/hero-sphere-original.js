@@ -1,20 +1,5 @@
 /**
- * hero-sphere-original.js — BACKUP, not loaded by any page. Kept as a
- * rollback copy of the Perlin-noise displacement-sphere hero effect that
- * assets/hero-sphere.js replaced with a pixel-tile globe. Restore by
- * copying this back over hero-sphere.js if the globe doesn't work out.
- *
- * hero-sphere.js — the WebGL displacement-sphere background behind the
- * hero heading on the homepage. Reproduces the original React component's
- * three.js scene, custom Perlin-noise Phong shader, and spring-driven
- * mouse-look exactly (see plan Phase 3).
- *
- * Imports straight from the site's existing three.js bundle (assets/
- * three.js) rather than vendoring three.js separately — its
- * export letters were confirmed by grepping the original component's own
- * import statement: `import{V as I,W as j,L as A,e as D,S as G,f as V,
- * U as q,g as F,M as T,c as U,a as k,D as H,A as W,r as N}
- * from"./three.js"`.
+ * hero-sphere-original.js — BACKUP
  */
 import {
   V as Vector2,
