@@ -1,0 +1,1 @@
+@layer components{.decoder-text:after{content:"_";visibility:hidden}.decoder-text__glyph{opacity:.8;font-weight:var(--fontWeightRegular);font-family:var(--fontStack);line-height:0}.decoder-text__value{opacity:1}}

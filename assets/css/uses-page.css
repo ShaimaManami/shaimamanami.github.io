@@ -1,0 +1,52 @@
+@layer components {
+    .table {
+        border-collapse: collapse;
+        width: 100%
+    }
+
+    .table__row {
+        --rowBorder: 1px solid color-mix(in lab, var(--text) 20%, transparent);
+        border-top: var(--rowBorder)
+    }
+
+    .table__row:last-child {
+        border-bottom: var(--rowBorder)
+    }
+
+    .table__head .table__row {
+        border-top: 0
+    }
+
+    .table__head-cell {
+        font-weight: var(--fontWeightMedium);
+        text-align: left
+    }
+
+    .table__cell,
+    .table__head-cell {
+        padding-right: var(--spaceXL);
+        padding-top: var(--spaceM);
+        padding-bottom: var(--spaceM)
+    }
+
+    .table__cell:last-child,
+    .table__head-cell:last-child {
+        padding-right: 0
+    }
+}
+
+.uses-page {
+    --maxWidthL: var(--maxWidthM)
+}
+
+.uses-page__section {
+    opacity: 0;
+    padding-top: var(--space2XL);
+    padding-bottom: var(--space2XL);
+    margin-top: var(--space2XL);
+    animation: fade-in 1s ease 1s forwards
+}
+
+.uses-page__section+.uses-page__section {
+    margin-top: 0
+}

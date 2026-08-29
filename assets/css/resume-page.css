@@ -1,0 +1,1191 @@
+.resume-page__resume {
+    --maxWidthL: var(--maxWidthM);
+    position: relative;
+    padding-bottom: var(--space4XL)
+}
+
+.resume-page__section {
+    opacity: 0;
+    padding-top: var(--spaceL);
+    padding-bottom: var(--spaceL);
+    margin-top: var(--spaceXL);
+    position: relative;
+    transform: translateY(40px) scale(.98);
+    transition: opacity 1s var(--bezierFastoutSlowin), transform 1s var(--bezierFastoutSlowin)
+}
+
+.resume-page__section+.resume-page__section {
+    margin-top: 0
+}
+
+.resume-page__section[data-visible=true] {
+    opacity: 1;
+    transform: translateY(0) scale(1)
+}
+
+.resume-page__section-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spaceL);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .8s var(--bezierFastoutSlowin) .2s, transform .8s var(--bezierFastoutSlowin) .2s
+}
+
+.resume-page__section[data-visible=true] .resume-page__section-heading {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .resume-page__section-heading {
+        animation: _fade-in_l742t_1 1.2s var(--bezierFastoutSlowin) forwards .3s
+    }
+}
+
+.resume-page__section-line {
+    flex: 1;
+    height: 2px;
+    background-color: color-mix(in lab, var(--primary) 30%, transparent);
+    margin-left: var(--spaceM);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .8s var(--bezierFastoutSlowin) .6s
+}
+
+.resume-page__section[data-visible=true] .resume-page__section-line {
+    transform: scaleX(1)
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .resume-page__section-line {
+        animation: resume-page-reveal 1.5s var(--bezierFastoutSlowin) forwards .6s
+    }
+}
+
+.resume-page__divider {
+    margin-top: var(--spaceXL);
+    margin-bottom: var(--spaceXL);
+    height: 1px;
+    background-color: color-mix(in lab, var(--text) 10%, transparent)
+}
+
+.resume-page__time-period {
+    color: var(--textLight);
+    font-size: var(--fontSizeBodyS);
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translate(20px);
+    transition: opacity .6s var(--bezierFastoutSlowin) .3s, transform .6s var(--bezierFastoutSlowin) .3s
+}
+
+.resume-page__section[data-visible=true] .resume-page__time-period {
+    opacity: 1;
+    transform: translate(0)
+}
+
+.resume-page__time-icon {
+    margin-right: var(--spaceS);
+    color: var(--primary)
+}
+
+.resume-page__resume .resume-page__text-row {
+    margin-bottom: var(--spaceL);
+    transition-property: opacity;
+    transition-timing-function: var(--bezierFastoutSlowin);
+    transition-duration: var(--durationXL);
+    opacity: 1;
+    transform: none
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .resume-page__resume .resume-page__text-row {
+        transition-property: transform, opacity
+    }
+}
+
+.resume-page__resume .resume-page__text-row[data-visible=true] {
+    transform: none;
+    opacity: 1
+}
+
+.resume-page__resume-row {
+    margin-bottom: var(--spaceXL);
+    position: relative;
+    transform-origin: left;
+    opacity: 0;
+    transform: translateY(30px) scale(.98);
+    padding-left: var(--spaceM);
+    transition: opacity .8s var(--bezierFastoutSlowin), transform .8s var(--bezierFastoutSlowin)
+}
+
+.resume-page__section[data-visible=true] .resume-page__resume-row {
+    opacity: 1;
+    transform: translateY(0) scale(1)
+}
+
+.resume-page__resume-row:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: color-mix(in lab, var(--primary) 40%, transparent);
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .6s var(--bezierFastoutSlowin), opacity .3s ease
+}
+
+.resume-page__resume-row:hover:before {
+    opacity: 1;
+    transform: scaleY(1)
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .resume-page__section[data-visible=true] .resume-page__resume-row {
+        animation: resume-page-stagger-fade-in .8s ease forwards
+    }
+
+    .resume-page__section[data-visible=true] .resume-page__resume-row:nth-child(2) {
+        animation-delay: .1s
+    }
+
+    .resume-page__section[data-visible=true] .resume-page__resume-row:nth-child(3) {
+        animation-delay: .2s
+    }
+
+    .resume-page__section[data-visible=true] .resume-page__resume-row:nth-child(4) {
+        animation-delay: .3s
+    }
+
+    .resume-page__section[data-visible=true] .resume-page__resume-row:nth-child(5) {
+        animation-delay: .4s
+    }
+}
+
+.resume-page__resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spaceXS);
+    gap: var(--spaceM)
+}
+
+@media (max-width: 696px) {
+    .resume-page__resume-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spaceXS)
+    }
+}
+
+.resume-page__resume-header-left {
+    flex: 1;
+    min-width: 0
+}
+
+.resume-page__resume-role {
+    margin-bottom: var(--spaceXS);
+    color: var(--textTitle);
+    position: relative;
+    display: inline-block;
+    transition: color .3s ease
+}
+
+.resume-page__resume-role:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s var(--bezierFastoutSlowin)
+}
+
+.resume-page__resume-row:hover .resume-page__resume-role {
+    color: var(--primary)
+}
+
+.resume-page__resume-row:hover .resume-page__resume-role:after {
+    transform: scaleX(1);
+    transform-origin: left
+}
+
+.resume-page__company-name {
+    display: block !important;
+    margin-top: var(--spaceXS);
+    margin-bottom: var(--spaceXS);
+    font-weight: 400
+}
+
+[data-theme=dark] .resume-page__company-name {
+    color: #ccd6f6 !important
+}
+
+[data-theme=light] .resume-page__company-name {
+    color: #4a5568 !important
+}
+
+.resume-page__resume-details {
+    margin-top: var(--spaceM);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .8s var(--bezierFastoutSlowin) .4s, transform .8s var(--bezierFastoutSlowin) .4s
+}
+
+.resume-page__section[data-visible=true] .resume-page__resume-details {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.resume-page__tech-stack-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spaceXL);
+    margin-top: var(--spaceXL);
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity .8s var(--bezierFastoutSlowin) .3s, transform .8s var(--bezierFastoutSlowin) .3s
+}
+
+.resume-page__section[data-visible=true] .resume-page__tech-stack-container {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.resume-page__tech-category {
+    margin-bottom: var(--spaceL);
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity .8s var(--bezierFastoutSlowin) .4s, transform .8s var(--bezierFastoutSlowin) .4s
+}
+
+.resume-page__section[data-visible=true] .resume-page__tech-category {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.resume-page__tech-category-title {
+    color: #a8b2d1;
+    margin-bottom: var(--spaceM);
+    font-weight: var(--fontWeightMedium);
+    font-size: var(--fontSizeBodyM);
+    display: flex;
+    align-items: center
+}
+
+.resume-page__tech-category-title:after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: color-mix(in lab, #A8B2D1 20%, transparent);
+    margin-left: var(--spaceM)
+}
+
+[data-theme=light] .resume-page__tech-category-title {
+    color: #2d3748
+}
+
+[data-theme=light] .resume-page__tech-category-title:after {
+    background: color-mix(in lab, #2D3748 20%, transparent)
+}
+
+.resume-page__tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spaceS)
+}
+
+.resume-page__tech-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spaceXS);
+    background: color-mix(in lab, var(--text) 3%, transparent);
+    color: var(--text);
+    padding: var(--spaceXS) var(--spaceS);
+    border-radius: var(--borderRadiusS);
+    font-size: var(--fontSizeBodyS);
+    font-weight: var(--fontWeightRegular);
+    border: 1px solid color-mix(in lab, var(--text) 6%, transparent);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: border-color .2s ease, opacity .6s var(--bezierFastoutSlowin) .6s, transform .6s var(--bezierFastoutSlowin) .6s, box-shadow .2s ease
+}
+
+.resume-page__section[data-visible=true] .resume-page__tech-item {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.resume-page__tech-item:hover {
+    border-color: color-mix(in lab, var(--primary) 30%, transparent);
+    box-shadow: 0 4px 8px color-mix(in lab, var(--primary) 10%, transparent);
+    transform: translateY(-2px)
+}
+
+.resume-page__tech-item-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    filter: none
+}
+
+.resume-page__tech-item-icon[src] {
+    filter: none !important
+}
+
+@media (max-width: 696px) {
+    .resume-page__tech-stack-container {
+        grid-template-columns: 1fr;
+        gap: var(--spaceL)
+    }
+}
+
+.resume-page__projects-wrapper {
+    transform: translate(70px);
+    opacity: 0;
+    transition: opacity .8s var(--bezierFastoutSlowin) .3s, transform .8s var(--bezierFastoutSlowin) .3s
+}
+
+.resume-page__section[data-visible=true] .resume-page__projects-wrapper {
+    opacity: 1
+}
+
+@media (max-width: 1040px) {
+    .resume-page__projects-wrapper {
+        transform: translate(50px)
+    }
+
+    .resume-page__section[data-visible=true] .resume-page__projects-wrapper {
+        transform: translate(50px)
+    }
+}
+
+@media (max-width: 696px) {
+    .resume-page__projects-wrapper {
+        transform: translate(0);
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center
+    }
+
+    .resume-page__section[data-visible=true] .resume-page__projects-wrapper {
+        transform: translate(0)
+    }
+}
+
+.resume-page__projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space4XL);
+    margin-top: var(--spaceXL)
+}
+
+@media (max-width: 1040px) {
+    .resume-page__projects-container {
+        gap: var(--space3XL)
+    }
+}
+
+@media (max-width: 696px) {
+    .resume-page__projects-container {
+        gap: var(--spaceXL)
+    }
+}
+
+.resume-page__project-card {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: var(--spaceL);
+    align-items: center;
+    margin-bottom: var(--space2XL);
+    position: relative;
+    opacity: 0;
+    transform: translateY(40px) scale(.98);
+    transition: opacity .8s var(--bezierFastoutSlowin), transform .8s var(--bezierFastoutSlowin)
+}
+
+.resume-page__section[data-visible=true] .resume-page__project-card {
+    opacity: 1;
+    transform: translateY(0) scale(1)
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .resume-page__section[data-visible=true] .resume-page__project-card {
+        animation: resume-page-stagger-fade-in .8s var(--bezierFastoutSlowin) forwards
+    }
+
+    .resume-page__section[data-visible=true] .resume-page__project-card:nth-child(2) {
+        animation-delay: .2s
+    }
+
+    .resume-page__section[data-visible=true] .resume-page__project-card:nth-child(3) {
+        animation-delay: .4s
+    }
+
+    .resume-page__section[data-visible=true] .resume-page__project-card:nth-child(4) {
+        animation-delay: .6s
+    }
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-card {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        gap: var(--spaceM)
+    }
+}
+
+.resume-page__project-card[data-reverse=true] .resume-page__project-content {
+    grid-column: 9 / -1;
+    text-align: right
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-card[data-reverse=true] .resume-page__project-content {
+        grid-column: 1 / -1;
+        text-align: left;
+        order: 2
+    }
+}
+
+.resume-page__project-card[data-reverse=true] .resume-page__project-image {
+    grid-column: 1 / 9
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-card[data-reverse=true] .resume-page__project-image {
+        grid-column: 1 / -1;
+        order: 1
+    }
+}
+
+.resume-page__project-card[data-reverse=true] .resume-page__project-tech-stack,
+.resume-page__project-card[data-reverse=true] .resume-page__project-links {
+    justify-content: flex-end
+}
+
+@media (max-width: 1040px) {
+
+    .resume-page__project-card[data-reverse=true] .resume-page__project-tech-stack,
+    .resume-page__project-card[data-reverse=true] .resume-page__project-links {
+        justify-content: flex-start
+    }
+}
+
+@media (max-width: 696px) {
+    .resume-page__project-card {
+        position: relative;
+        min-height: 250px;
+        background-color: var(--backgroundLight);
+        border-radius: 8px;
+        overflow: hidden;
+        --mobile-overlay-strength: 82%
+    }
+
+    .resume-page__project-card:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: var(--mobile-project-bg);
+        opacity: 1;
+        z-index: 0
+    }
+
+    .resume-page__project-card:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: color-mix(in lab, var(--background) var(--mobile-overlay-strength), transparent);
+        z-index: 1;
+        pointer-events: none
+    }
+
+    .resume-page__project-card>* {
+        position: relative;
+        z-index: 2
+    }
+}
+
+@media (max-width: 696px) {
+    .resume-page__project-card:nth-child(1):after {
+        background-image: var(--mobile-project-bg, url(/real-time-data-pipeline-light.jpg))
+    }
+}
+
+@media (max-width: 696px) {
+    .resume-page__project-card:nth-child(2):after {
+        background-image: var(--mobile-project-bg, url(/real-time-data-pipeline-dark.jpg))
+    }
+}
+
+@media (max-width: 696px) {
+    .resume-page__project-card:nth-child(3):after {
+        background-image: var(--mobile-project-bg, url(/real-time-data-pipeline-light.jpg))
+    }
+}
+
+.resume-page__project-content {
+    grid-column: 1 / 6;
+    grid-row: 1 / -1;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-content {
+        grid-column: 1 / -1;
+        order: 2;
+        padding: var(--spaceXL);
+        background-color: color-mix(in lab, var(--background) 95%, var(--primary) 5%);
+        border-radius: 4px
+    }
+}
+
+@media (max-width: 696px) {
+    .resume-page__project-content {
+        background-color: transparent;
+        padding: var(--spaceL)
+    }
+}
+
+.resume-page__project-label {
+    color: var(--primary);
+    font-family: var(--fontMono);
+    font-size: var(--fontSizeS);
+    margin-bottom: var(--spaceS);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 400
+}
+
+[data-theme=dark] .resume-page__project-label {
+    color: #64ffda
+}
+
+[data-theme=light] .resume-page__project-label {
+    color: var(--primary)
+}
+
+.resume-page__project-label-aligned {
+    color: var(--primary);
+    font-family: var(--fontMono);
+    font-size: clamp(12px, 2.5vw, 14px) !important;
+    margin-bottom: var(--spaceXS);
+    margin-top: var(--spaceXL);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 400;
+    width: 150%;
+    margin-left: -50%
+}
+
+[data-theme=dark] .resume-page__project-label-aligned {
+    color: #64ffda
+}
+
+[data-theme=light] .resume-page__project-label-aligned {
+    color: var(--primary)
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-label-aligned {
+        width: 100%;
+        margin-left: 0
+    }
+}
+
+.resume-page__project-label-aligned * {
+    font-size: clamp(12px, 2.5vw, 14px) !important
+}
+
+.resume-page__project-title {
+    color: var(--textTitle);
+    margin: var(--spaceXS) 0 var(--spaceM);
+    font-size: clamp(22px, 4.5vw, 26px);
+    font-weight: 600;
+    line-height: 1.1
+}
+
+@media (--mediaHover) {
+    .resume-page__project-card:hover .resume-page__project-title {
+        color: var(--primary);
+        transition: color .25s cubic-bezier(.645, .045, .355, 1)
+    }
+}
+
+[data-theme=dark] .resume-page__project-title {
+    color: #ccd6f6
+}
+
+@media (--mediaHover) {
+    .resume-page__project-card:hover :is([data-theme=dark] .resume-page__project-title) {
+        color: #64ffda
+    }
+}
+
+[data-theme=light] .resume-page__project-title {
+    color: #2d3748
+}
+
+@media (--mediaHover) {
+    .resume-page__project-card:hover :is([data-theme=light] .resume-page__project-title) {
+        color: var(--primary)
+    }
+}
+
+.resume-page__project-title-aligned {
+    color: var(--textTitle);
+    margin: var(--spaceXS) 0 var(--spaceS);
+    margin-top: var(--spaceXS);
+    font-size: clamp(18px, 3.5vw, 22px);
+    font-weight: 600;
+    line-height: 1.1;
+    width: 150%;
+    margin-left: -50%
+}
+
+@media (--mediaHover) {
+    .resume-page__project-card:hover .resume-page__project-title-aligned {
+        color: var(--primary);
+        transition: color .25s cubic-bezier(.645, .045, .355, 1)
+    }
+}
+
+[data-theme=dark] .resume-page__project-title-aligned {
+    color: #ccd6f6
+}
+
+@media (--mediaHover) {
+    .resume-page__project-card:hover :is([data-theme=dark] .resume-page__project-title-aligned) {
+        color: #64ffda
+    }
+}
+
+[data-theme=light] .resume-page__project-title-aligned {
+    color: #2d3748
+}
+
+@media (--mediaHover) {
+    .resume-page__project-card:hover :is([data-theme=light] .resume-page__project-title-aligned) {
+        color: var(--primary)
+    }
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-title-aligned {
+        width: 100%;
+        margin-left: 0
+    }
+}
+
+.resume-page__project-description {
+    background-color: var(--backgroundLight);
+    padding: var(--spaceM) var(--spaceL);
+    border-radius: 2px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: var(--spaceL);
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 10px 30px -15px #000000b3;
+    border: 1px solid color-mix(in lab, var(--text) 10%, transparent)
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-description {
+        background-color: color-mix(in lab, var(--background) 95%, var(--primary) 5%);
+        padding: var(--spaceM) 0;
+        box-shadow: none;
+        border: none
+    }
+}
+
+.resume-page__project-description p {
+    color: var(--text);
+    margin: 0
+}
+
+[data-theme=dark] .resume-page__project-description {
+    background-color: #1a1a1a;
+    border-color: color-mix(in lab, var(--text) 15%, transparent);
+    box-shadow: 0 10px 30px -15px #000000e6
+}
+
+[data-theme=dark] .resume-page__project-description p {
+    color: #ccd6f6
+}
+
+[data-theme=light] .resume-page__project-description {
+    background-color: #f8f9fa;
+    border-color: color-mix(in lab, var(--text) 8%, transparent);
+    box-shadow: 0 10px 30px -15px #0003
+}
+
+[data-theme=light] .resume-page__project-description p {
+    color: #2d3748
+}
+
+.resume-page__project-description-compact {
+    background-color: var(--backgroundLight);
+    padding: 2px var(--spaceS);
+    border-radius: 2px;
+    font-size: 6px !important;
+    margin-top: var(--spaceS);
+    line-height: 1.1;
+    margin-bottom: var(--spaceL);
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 10px 30px -15px #000000b3;
+    border: 1px solid color-mix(in lab, var(--text) 10%, transparent);
+    width: 150%;
+    margin-left: -50%;
+    max-width: none;
+    min-height: auto;
+    height: auto
+}
+
+.resume-page__project-description-compact [data-size] {
+    font-size: 15px !important
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-description-compact {
+        background-color: color-mix(in lab, var(--background) 95%, var(--primary) 5%);
+        padding: 2px var(--spaceS);
+        box-shadow: none;
+        border: none;
+        width: 100%;
+        margin-left: 0;
+        font-size: 8px !important
+    }
+
+    .resume-page__project-description-compact [data-size] {
+        font-size: 15px !important
+    }
+}
+
+.resume-page__project-description-compact p {
+    color: var(--text);
+    margin: 0;
+    display: inline;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: inherit !important
+}
+
+[data-theme=dark] .resume-page__project-description-compact {
+    background-color: #1a1a1a;
+    border-color: color-mix(in lab, var(--text) 15%, transparent);
+    box-shadow: 0 10px 30px -15px #000000e6
+}
+
+[data-theme=dark] .resume-page__project-description-compact p {
+    color: #ccd6f6
+}
+
+[data-theme=light] .resume-page__project-description-compact {
+    background-color: #f8f9fa;
+    border-color: color-mix(in lab, var(--text) 8%, transparent);
+    box-shadow: 0 10px 30px -15px #0003
+}
+
+[data-theme=light] .resume-page__project-description-compact p {
+    color: #2d3748
+}
+
+.resume-page__project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spaceS);
+    margin-bottom: var(--spaceM);
+    font-family: var(--fontMono);
+    list-style: none;
+    padding: 0;
+    justify-content: flex-start
+}
+
+.resume-page__project-tech-stack>* {
+    color: var(--textLight);
+    font-size: var(--fontSizeS);
+    white-space: nowrap;
+    position: relative
+}
+
+.resume-page__project-tech-stack>*:not(:last-child):after {
+    content: "·";
+    margin-left: var(--spaceS);
+    color: var(--textLight)
+}
+
+[data-theme=dark] .resume-page__project-tech-stack>* {
+    color: #a8b2d1
+}
+
+[data-theme=dark] .resume-page__project-tech-stack>*:not(:last-child):after {
+    color: #a8b2d1
+}
+
+[data-theme=light] .resume-page__project-tech-stack>* {
+    color: #718096
+}
+
+[data-theme=light] .resume-page__project-tech-stack>*:not(:last-child):after {
+    color: #718096
+}
+
+.resume-page__project-tech-stack-aligned {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spaceS);
+    margin-bottom: var(--spaceM);
+    font-family: var(--fontMono);
+    list-style: none;
+    padding: 0;
+    justify-content: flex-start;
+    width: 150%;
+    margin-left: -50%
+}
+
+.resume-page__project-tech-stack-aligned>* {
+    color: var(--textLight);
+    font-size: var(--fontSizeS);
+    white-space: nowrap;
+    position: relative
+}
+
+.resume-page__project-tech-stack-aligned>*:not(:last-child):after {
+    content: "·";
+    margin-left: var(--spaceS);
+    color: var(--textLight)
+}
+
+[data-theme=dark] .resume-page__project-tech-stack-aligned>* {
+    color: #a8b2d1
+}
+
+[data-theme=dark] .resume-page__project-tech-stack-aligned>*:not(:last-child):after {
+    color: #a8b2d1
+}
+
+[data-theme=light] .resume-page__project-tech-stack-aligned>* {
+    color: #718096
+}
+
+[data-theme=light] .resume-page__project-tech-stack-aligned>*:not(:last-child):after {
+    color: #718096
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-tech-stack-aligned {
+        width: 100%;
+        margin-left: 0
+    }
+}
+
+.resume-page__project-links {
+    display: flex;
+    gap: var(--spaceM);
+    align-items: center
+}
+
+.resume-page__project-links-aligned {
+    display: flex;
+    gap: var(--spaceM);
+    align-items: center;
+    width: 150%;
+    margin-left: -50%
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-links-aligned {
+        width: 100%;
+        margin-left: 0
+    }
+}
+
+.resume-page__project-links-aligned .resume-page__project-link {
+    min-width: auto !important;
+    padding: calc(var(--spaceXS) * .5) var(--spaceXS) !important;
+    font-size: .8rem !important;
+    border-width: 1px !important;
+    height: auto !important;
+    --buttonSize: auto !important;
+    --buttonFontSize: .8rem !important;
+    --buttonPadding: calc(var(--spaceXS) * .5) var(--spaceXS) !important
+}
+
+@media (--mediaHover) {
+    .resume-page__project-links-aligned .resume-page__project-link:hover {
+        color: var(--primary);
+        border-color: var(--primary)
+    }
+}
+
+.resume-page__project-link {
+    min-width: auto;
+    padding: var(--spaceS) var(--spaceM)
+}
+
+@media (--mediaHover) {
+    .resume-page__project-link:hover {
+        color: var(--primary);
+        border-color: var(--primary)
+    }
+}
+
+.resume-page__project-image {
+    grid-column: 4 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    z-index: 1;
+    border-radius: 2px;
+    overflow: hidden
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-image {
+        grid-column: 1 / -1;
+        order: 1;
+        opacity: .25;
+        height: 300px
+    }
+}
+
+.resume-page__project-image:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: color-mix(in lab, var(--primary) 20%, transparent);
+    opacity: 1;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity .25s cubic-bezier(.645, .045, .355, 1)
+}
+
+.resume-page__project-image:hover:before {
+    opacity: 0
+}
+
+.resume-page__project-image:focus-within:before {
+    opacity: 0
+}
+
+.resume-page__project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity .25s cubic-bezier(.645, .045, .355, 1)
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-image img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%
+    }
+}
+
+.resume-page__project-image-shifted {
+    grid-column: 5 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    z-index: 1;
+    border-radius: 2px;
+    overflow: hidden
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-image-shifted {
+        grid-column: 1 / -1;
+        order: 1;
+        opacity: .25;
+        height: 300px
+    }
+}
+
+@media (max-width: 696px) {
+    .resume-page__project-image-shifted {
+        display: none
+    }
+}
+
+.resume-page__project-image-shifted:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: color-mix(in lab, var(--primary) 20%, transparent);
+    opacity: 1;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity .25s cubic-bezier(.645, .045, .355, 1)
+}
+
+.resume-page__project-image-shifted:hover:before {
+    opacity: 0
+}
+
+.resume-page__project-image-shifted:focus-within:before {
+    opacity: 0
+}
+
+.resume-page__project-image-shifted img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity .25s cubic-bezier(.645, .045, .355, 1)
+}
+
+@media (max-width: 1040px) {
+    .resume-page__project-image-shifted img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%
+    }
+}
+
+.resume-page__contact-section {
+    text-align: center;
+    padding: var(--spaceXL) 0;
+    margin-top: var(--space2XL);
+    position: relative
+}
+
+.resume-page__contact-buttons {
+    display: flex;
+    gap: var(--spaceL);
+    margin-top: var(--spaceXL);
+    justify-content: center
+}
+
+@media (max-width: 696px) {
+    .resume-page__contact-buttons {
+        flex-direction: column;
+        align-items: center
+    }
+}
+
+.resume-page__download-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: var(--spaceM);
+    opacity: 0;
+    transform: translateY(20px) scale(.98);
+    animation: resume-page-stagger-fade-in .8s var(--bezierFastoutSlowin) forwards .4s
+}
+
+@media (max-width: 1040px) {
+    .resume-page__download-container {
+        justify-content: center
+    }
+}
+
+@keyframes resume-page-project-fade-slide {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, var(--space3XL), 0)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateZ(0)
+    }
+}
+
+@keyframes resume-page-fade-slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes _fade-in_l742t_1 {
+    0% {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes resume-page-reveal {
+    0% {
+        transform: scaleX(0)
+    }
+
+    to {
+        transform: scaleX(1)
+    }
+}
+
+@keyframes resume-page-stagger-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(.95)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1)
+    }
+}
+
+@keyframes resume-page-slide-in-left {
+    0% {
+        opacity: 0;
+        transform: translate(-30px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
+
+@keyframes resume-page-slide-in-right {
+    0% {
+        opacity: 0;
+        transform: translate(30px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0)
+    }
+}

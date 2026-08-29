@@ -1,0 +1,19 @@
+.hero-sphere__canvas {
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 3s;
+    transition-timing-function: var(--bezierFastoutSlowin);
+    z-index: -1;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 100%)
+}
+
+.hero-sphere__canvas[data-visible=true] {
+    opacity: 1
+}

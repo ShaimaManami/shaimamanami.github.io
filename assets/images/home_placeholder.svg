@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <defs>
+    <symbol id="project" viewBox="0 0 751 136">
+      <text x="0" y="118" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="136" letter-spacing="2" textLength="751" lengthAdjust="spacingAndGlyphs">PROJECT</text>
+    </symbol>
+    <symbol id="profile" viewBox="0 0 136 766">
+      <text x="68" y="115" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="128">
+        <tspan x="68" dy="0">A</tspan>
+        <tspan x="68" dy="153">B</tspan>
+        <tspan x="68" dy="153">O</tspan>
+        <tspan x="68" dy="153">U</tspan>
+        <tspan x="68" dy="153">T</tspan>
+      </text>
+    </symbol>
+  </defs>
+</svg>

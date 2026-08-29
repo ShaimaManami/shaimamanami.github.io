@@ -1,0 +1,476 @@
+@layer components {
+    .textarea {
+        resize: var(--resize)
+    }
+}
+
+@layer components {
+    .field {
+        --inputFontSize: 1rem;
+        --inputFocusColor: var(--primary);
+        --inputUnderlineColor: color-mix(in lab, var(--text) 20%, transparent);
+        position: relative;
+        display: flex;
+        flex-direction: column
+    }
+
+    .field[data-error=true] {
+        --inputUnderlineColor: var(--error)
+    }
+
+    .field__content {
+        position: relative;
+        display: flex
+    }
+
+    .field__input {
+        display: block;
+        color: var(--textBody);
+        box-shadow: inset 0 -2px 0 0 var(--inputUnderlineColor);
+        transition: background-color 5000s linear 0s;
+        width: 100%;
+        font-size: var(--inputFontSize);
+        line-height: var(--lineHeightBody);
+        padding: var(--spaceL) 0 var(--spaceM);
+        overflow-x: hidden;
+        outline: none
+    }
+
+    .field__input:-internal-autofill-selected {
+        -webkit-text-fill-color: var(--textBody);
+        box-shadow: 0 0 0 1000px color-mix(in lab, var(--text) 10%, transparent) inset
+    }
+
+    .field__input:-webkit-autofill {
+        -webkit-text-fill-color: var(--textBody);
+        box-shadow: 0 0 0 1000px color-mix(in lab, var(--text) 10%, transparent) inset
+    }
+
+    .field__input::-webkit-contacts-auto-fill-button:hover {
+        background-color: var(--primary)
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        #field__root .field__input {
+            transition: background-color 5000s linear 0s
+        }
+    }
+
+    .field__underline {
+        background: var(--inputFocusColor);
+        transform: scale3d(0, 1, 1);
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        transform-origin: left
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .field__underline {
+            transition: transform var(--durationM) var(--bezierFastoutSlowin)
+        }
+    }
+
+    .field__underline[data-focused=true] {
+        transform: scaleZ(1)
+    }
+
+    .field__label {
+        color: color-mix(in lab, var(--text) 80%, transparent);
+        position: absolute;
+        top: var(--spaceL);
+        left: 0;
+        display: block;
+        cursor: text;
+        transform-origin: top left;
+        transition: color var(--durationM) ease
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .field__label {
+            transition: transform var(--durationM) var(--bezierFastoutSlowin), color var(--durationM) ease
+        }
+    }
+
+    .field__label[data-filled=true],
+    .field__label[data-focused=true] {
+        color: color-mix(in lab, var(--text) 54%, transparent);
+        transform: scale(.8) translateY(calc(var(--spaceL) * -1))
+    }
+
+    .field__error {
+        transition-property: opacity;
+        transition-duration: var(--durationM);
+        transition-timing-function: var(--bezierFastoutSlowin);
+        height: var(--height);
+        opacity: 0
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .field__error {
+            transition-property: height, opacity
+        }
+    }
+
+    .field__error[data-visible=true] {
+        opacity: 1
+    }
+
+    .field__error-message {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: var(--spaceXS);
+        padding-top: var(--spaceS);
+        color: var(--error)
+    }
+}
+
+.contact-page {
+    --formHeight: 530px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 100%;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%
+}
+
+@media (max-width: 696px) {
+    .contact-page {
+        padding-top: 0
+    }
+}
+
+.contact-page__form {
+    grid-area: 1 / 1;
+    max-width: var(--maxWidthS);
+    width: 100%;
+    padding: var(--space2XL) 0
+}
+
+@media (max-width: 696px) {
+    .contact-page__form {
+        padding: var(--space5XL) 0 var(--space2XL);
+        align-self: flex-start
+    }
+}
+
+.contact-page__title {
+    margin-bottom: var(--space2XL);
+    transition-property: opacity;
+    transition-timing-function: var(--bezierFastoutSlowin);
+    transition-duration: var(--durationXL);
+    transition-delay: var(--delay);
+    opacity: 0
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-page__title {
+        transition-property: transform, opacity;
+        transform: translate3d(0, var(--space5XL), 0)
+    }
+}
+
+.contact-page__title[data-status=entering],
+.contact-page__title[data-status=entered] {
+    transform: none;
+    opacity: 1
+}
+
+.contact-page__title[data-status=exiting] {
+    transition-duration: var(--durationM);
+    transition-delay: 0s;
+    opacity: 0
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-page__title[data-status=exiting] {
+        transform: translate3d(0, calc(var(--space2XL) * -1), 0)
+    }
+}
+
+.contact-page__divider {
+    margin-bottom: var(--space3XL);
+    transition-property: opacity;
+    transition-timing-function: var(--bezierFastoutSlowin);
+    transition-duration: var(--durationXL);
+    transition-delay: var(--delay);
+    opacity: 0
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-page__divider {
+        transition-property: transform, opacity;
+        transform: translate3d(0, var(--space5XL), 0)
+    }
+}
+
+.contact-page__divider[data-status=entering],
+.contact-page__divider[data-status=entered] {
+    transform: none;
+    opacity: 1
+}
+
+.contact-page__divider[data-hidden=true] {
+    opacity: 0
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-page__divider[data-hidden=true] {
+        transform: translate3d(0, var(--space5XL), 0)
+    }
+}
+
+.contact-page__divider[data-status=exiting] {
+    transition-duration: var(--durationM);
+    transition-delay: 0s;
+    opacity: 0
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-page__divider[data-status=exiting] {
+        transform: translate3d(0, calc(var(--space2XL) * -1), 0)
+    }
+}
+
+.contact-page__field {
+    transition-property: opacity;
+    transition-timing-function: var(--bezierFastoutSlowin);
+    transition-duration: var(--durationXL);
+    transition-delay: var(--delay);
+    opacity: 0
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-page__field {
+        transition-property: transform, opacity;
+        transform: translate3d(0, var(--space3XL), 0)
+    }
+}
+
+.contact-page__field+.contact-page__field {
+    margin-top: var(--spaceXL)
+}
+
+.contact-page__field[data-status=entering],
+.contact-page__field[data-status=entered] {
+    transform: none;
+    opacity: 1
+}
+
+.contact-page__field[data-hidden=true] {
+    opacity: 0
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-page__field[data-hidden=true] {
+        transform: translate3d(0, var(--space3XL), 0);
+        transform: none
+    }
+}
+
+.contact-page__field[data-status=exiting] {
+    transition-duration: var(--durationM);
+    transition-delay: 0s;
+    opacity: 0
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-page__field[data-status=exiting] {
+        transform: translate3d(0, calc(var(--space2XL) * -1), 0)
+    }
+}
+
+.contact-page__honeypot {
+    display: none
+}
+
+.contact-page__submit-button {
+    --buttonLoaderDelay: var(--durationL);
+    margin-top: calc(var(--spaceXL) * 2);
+    transition-delay: var(--delay);
+    transition-duration: var(--durationXL);
+    opacity: 0;
+    justify-self: flex-start
+}
+
+.contact-page__submit-button[data-status=exiting],
+.contact-page__submit-button[data-status=exited] {
+    transition-property: opacity;
+    transition-timing-function: var(--bezierFastoutSlowin)
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .contact-page__submit-button[data-status=exiting],
+    .contact-page__submit-button[data-status=exited] {
+        transition-property: transform, opacity;
+        transform: translate3d(0, var(--space3XL), 0)
+    }
+}
+
+.contact-page__submit-button[data-status=entered] {
+    transition-delay: 0ms;
+    transition-duration: var(--durationM)
+}
+
+.contact-page__submit-button[data-sending=true] svg {
+    transition: transform var(--bezierFastoutSlowin) var(--durationXL), opacity var(--durationS) ease var(--durationS);
+    transform: translate3d(var(--space5XL), 0, 0);
+    opacity: 0
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-page__submit-button[data-sending=true] svg {
+        transition-property: opacity;
+        transform: none
+    }
+}
+
+.contact-page__submit-button[data-status=entering],
+.contact-page__submit-button[data-status=entered] {
+    opacity: 1
+}
+
+.contact-page__submit-button[data-status=entering]:not(:hover),
+.contact-page__submit-button[data-status=entering]:hover {
+    transform: none
+}
+
+.contact-page__submit-button[data-status=exiting] {
+    transition-duration: var(--durationM);
+    transition-delay: 0s;
+    opacity: 0
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-page__submit-button[data-status=exiting] {
+        transform: translate3d(0, calc(var(--space2XL) * -1), 0)
+    }
+}
+
+.contact-page__complete {
+    grid-area: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spaceXL) var(--spaceM);
+    text-align: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+
+.contact-page__complete-title {
+    margin: 0;
+    transition-property: opacity;
+    transition-timing-function: var(--bezierFastoutSlowin);
+    transition-duration: var(--durationXL);
+    transition-delay: var(--delay);
+    opacity: 0
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-page__complete-title {
+        transition-property: transform, opacity;
+        transform: translate3d(0, var(--space3XL), 0)
+    }
+}
+
+.contact-page__complete-title[data-status=entered] {
+    transform: none;
+    opacity: 1
+}
+
+.contact-page__complete-text {
+    margin-top: var(--spaceM);
+    transition-property: opacity;
+    transition-timing-function: var(--bezierFastoutSlowin);
+    transition-duration: var(--durationXL);
+    transition-delay: var(--delay);
+    opacity: 0
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-page__complete-text {
+        transition-property: transform, opacity;
+        transform: translate3d(0, var(--space3XL), 0)
+    }
+}
+
+.contact-page__complete-text[data-status=entered] {
+    transform: none;
+    opacity: 1
+}
+
+.contact-page__complete-button {
+    margin-top: var(--spaceL);
+    transition-duration: var(--durationXL);
+    transition-delay: var(--delay);
+    opacity: 0
+}
+
+.contact-page__complete-button[data-status=entering],
+.contact-page__complete-button[data-status=exited] {
+    transition-property: opacity;
+    transition-timing-function: var(--bezierFastoutSlowin)
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .contact-page__complete-button[data-status=entering],
+    .contact-page__complete-button[data-status=exited] {
+        transition-property: transform, opacity;
+        transform: translate3d(0, var(--space3XL), 0)
+    }
+}
+
+.contact-page__complete-button[data-status=entered] {
+    opacity: 1
+}
+
+.contact-page__complete-button[data-status=entered]:not(:hover) {
+    transform: none
+}
+
+.contact-page__error {
+    color: var(--error);
+    overflow: hidden;
+    height: var(--height)
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-page__error {
+        transition-property: height;
+        transition-duration: var(--durationM);
+        transition-timing-function: var(--bezierFastoutSlowin)
+    }
+}
+
+.contact-page__error-content {
+    padding-top: var(--spaceXL)
+}
+
+.contact-page__error-message {
+    display: flex;
+    padding: var(--spaceM);
+    line-height: 24px;
+    background-color: color-mix(in lab, var(--error) 10%, transparent);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%)
+}
+
+.contact-page__error-icon {
+    flex: 0 0 auto;
+    margin-right: var(--spaceS)
+}
+
+.contact-page__footer {
+    opacity: 0;
+    animation: fade-in var(--durationL) ease var(--durationXL) forwards
+}
