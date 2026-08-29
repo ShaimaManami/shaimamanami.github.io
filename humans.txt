@@ -1,0 +1,7 @@
+/* TEAM */
+Name: Shaima Alsharif
+Role: Data Engineer / Full-Stack Developer 
+Site: https://shaimamanami.github.io
+GitHub: https://github.com/ShaimaManami
+LinkedIn: https://www.linkedin.com/in/shaima-alsharif
+Location: Saudi Arabia

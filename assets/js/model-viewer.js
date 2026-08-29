@@ -29,7 +29,8 @@ var PROJECTS = [
         url: "/assets/models/macbook-pro.glb",
         position: { x: 0, y: 0, z: 0 },
         texture: "/assets/images/meteo-portal-dashboard.jpg",
-        placeholder: "/assets/images/meteo-portal-dashboard-placeholder.jpg"
+        placeholder: "/assets/images/meteo-portal-dashboard-placeholder.jpg",
+        blur: true
       }
     ]
   },
@@ -199,11 +200,25 @@ function setupViewer(project) {
     }, { threshold: 0.2 }).observe(wrapper);
   }
 
+  function blurTexture(tex, amount) {
+    var img = tex.image;
+    var canvas = document.createElement("canvas");
+    canvas.width = img.naturalWidth || img.width;
+    canvas.height = img.naturalHeight || img.height;
+    var ctx = canvas.getContext("2d");
+    ctx.filter = "blur(" + amount + "px)";
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    tex.image = canvas;
+    tex.needsUpdate = true;
+    return tex;
+  }
+
   function applyScreenTexture(mesh, index, model) {
     var placeholderUrl = model.placeholder;
     var fullUrl = model.texture;
 
     function apply(tex, targetMesh) {
+      if (model.blur) blurTexture(tex, 6);
       tex.colorSpace = "srgb";
       tex.flipY = false;
       tex.generateMipmaps = false;

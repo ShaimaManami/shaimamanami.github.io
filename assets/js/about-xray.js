@@ -89,7 +89,7 @@ function init() {
   var markWrap = document.createElement("div");
   markWrap.className = "profile__xray-mark";
   markWrap.setAttribute("aria-hidden", "true");
-  markWrap.innerHTML = monogramSVG(150, "about-monogram-clip");
+  markWrap.innerHTML = monogramSVG(96, "about-monogram-clip");
   container.appendChild(markWrap);
 
   var hint = document.createElement("span");
